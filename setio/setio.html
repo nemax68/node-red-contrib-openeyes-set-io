@@ -1,0 +1,80 @@
+<!--
+  Copyright 2019 OPEN-EYES S.r.l.
+
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<script type="text/x-red" data-template-name="set-io">
+   <!-- data-template-name identifies the node type this is for              -->
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+		    <label for="node-input-ioid"><i class="icon-tag"></i> port</label>
+		      <select type="text" id="node-input-ioid" style="width:70%;">
+            <option value="1">OUTPUT 1</option>
+            <option value="2">OUTPUT 2</option>
+            <option value="3">ESERR</option>
+            <option value="4">msg</option>
+          </select>
+	  </div>
+
+    <div class="form-row">
+        <label for="node-input-value"> value</label>
+        <select type="text" id="node-input-value" style="width:70%;">
+          <option value="0">OFF</option>
+          <option value="1">ON</option>
+          <option value="2">msg</option>
+        </select>
+    </div>
+</script>
+
+
+<!-- help text for the node.                   -->
+<script type="text/x-red" data-help-name="set-io">
+   <!-- data-help-name identifies the node type this help is for             -->
+   <!-- This content appears in the Info sidebar when a node is selected     -->
+   <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
+   <!-- node in the palette.                                                 -->
+   <p>Write command string to /dev/sd102io driver.</p>
+   <p>command can be fixed or decoded from JSON message with sintax: </p>
+   <p> { "port":"xxxx","value":"yyyy" } </p>
+   <p> where xxxx can be OUT1/OUT2/ESERR </p>
+   <p> and yyyy: ON/OFF </p>
+</script>
+
+<!-- node type is registered along with all of its properties   -->
+<script type="text/javascript">
+    RED.nodes.registerType('set-io',{
+        category: 'OpenEyes',     // the palette category
+        defaults: {               // defines the editable properties of the node
+          ioid: {value:"1"},
+          value: {value:"0"},
+          name: {value:""}        // node name
+        },
+        inputs: 1,               	// set the number of inputs - only 0 or 1
+        outputs: 0,              	// set the number of outputs - 0 to n
+        icon: "inject.png",
+        color: "#A6BBCF",
+        align: 'right',
+        label: function() {     	// sets the default label contents
+            return this.name||this.topic||"set-io";
+        },
+        labelStyle: function() { 	// sets the class to apply to the label
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

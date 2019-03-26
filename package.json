@@ -1,0 +1,26 @@
+{
+    "name": "openeyes-set-io",
+    "version": "0.0.1",
+    "description": "This write /dev/input/event2 on OPEN-EYES I/O",
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nemax68/node-red-contrib-OpenEyes-GetInput"
+    },
+    "license": "GPL-3.0",
+    "keywords": [
+        "node-red",
+        "OPEN-EYES",
+        "input",
+        "i/o"
+    ],
+    "node-red": {
+        "nodes": {
+            "pir": "setio/setio.js"
+        }
+    },
+    "author": {
+        "name": "Massimiliano Negretti",
+        "email": "massimiliano.negretti@open-eyes.it"
+    }
+}
