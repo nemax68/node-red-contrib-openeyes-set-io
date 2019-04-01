@@ -1,7 +1,7 @@
 {
     "name": "openeyes-set-io",
     "version": "0.0.1",
-    "description": "This write /dev/input/event2 on OPEN-EYES I/O",
+    "description": "write cmd into OPEN-EYES I/O driver",
     "dependencies": {},
     "repository": {
         "type": "git",
