@@ -3,11 +3,11 @@
 Description
 ===========
 
-This write /dev/input/event2 from I/O module on OPEN-EYES platform
+This write cmd into /dev/sd102io driver OPEN-EYES platform
 
 ![openeyes-get-io-flow](https://github.com/nemax68/node-red-contrib-openeyes-get-io/blob/master/images/flow.png)
 
-A [node.js](http://nodejs.org/) library for detecting event on OPEN-EYES I/O queue
+A [node.js](http://nodejs.org/) library for driving event on OPEN-EYES I/O queue
 
 
 Requirements
@@ -19,13 +19,13 @@ Requirements
 
 * Need [OpenEyes](http://open-eyes.it) hardware platform
 
-  ![OpenEyes-image](https://github.com/nemax68/node-red-contrib-openeyes-get-io/blob/master/images/open-eyes.png)
+  ![OpenEyes-image](https://github.com/nemax68/node-red-contrib-openeyes-set-io/blob/master/images/open-eyes.png)
 
 Install
 =======
 
 ```shell
-$ npm install openeyes-get-io
+$ npm install openeyes-set-io
 ```
 Values
 ========
